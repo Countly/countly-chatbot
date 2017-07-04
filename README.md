@@ -16,7 +16,7 @@ bash bin/install.sh
 # Countly chatbot should be online in Slack
 ```
 
-## Chatbot commands 
+## Chatbot commands 
 
 Here are currently implemented commands for Countly Chatbot: 
 
@@ -39,7 +39,7 @@ All of them had 4389 session and spent on average 3.1 min
 2131 or user were new
 ```
 
-# Add a new conversation
+## Adding a new conversation
 We suggest that you create new conversations by modifying configuration file. You can create module under conversations directory exporting function accepting three arguments - controller, bot and helps array.
 
 For more information about controller, see [this documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#matching-patterns-and-keywords-with-hears).
