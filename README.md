@@ -20,15 +20,16 @@ bash bin/install.sh
 
 Here are currently implemented commands for Countly Chatbot: 
 
+```
 hello
 show apps
 show stats for {APP_NAME}
 show errors
-
+```
 Example: 
 
 ```
-Me: 
+You: 
 Show stats for MyMobileApp
 
 Countly bot: 
