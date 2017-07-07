@@ -8,6 +8,17 @@ var controller = Botkit.slackbot({
 var bot = controller.spawn({
     token: config.slack_token
 }).startRTM();
+
+bot.api.users.setPresence({presence:"auto"},function(err,response) {});
+
+bot._isSilent = false;
+
+bot._reply = bot.reply;
+bot.reply = function(){
+    if(!bot._isSilent){
+        bot._reply.apply(bot, arguments);
+    }
+}
 var helps = [];
 
 if(config.conversations){
@@ -24,5 +35,19 @@ controller.hears(['help me', 'what([^!.?,]*)can([^!.?,]*)do', 'need([^!.?,]*)hel
     for(var i = 0; i < helps.length; i++){
         resp += helps[i]+"\n";
     }
-    bot.reply(message, resp);
+    bot._reply(message, resp);
+});
+
+helps.push("shut up");
+controller.hears(['shut up'], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
+    bot.reply(message, ":mute:");
+    bot._isSilent = true;
+    bot.api.users.setPresence({presence:"away"},function(err,response) {});
+});
+
+helps.push("speak up");
+controller.hears(['speak up'], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
+    bot._isSilent = false;
+    bot.api.users.setPresence({presence:"auto"},function(err,response) {});
+    bot.reply(message, "What's up?");
 });
