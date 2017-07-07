@@ -40,10 +40,11 @@ All of them had 4389 session and spent on average 3.1 min
 ```
 
 ## Adding a new conversation
-We suggest that you create new conversations by modifying configuration file. You can create module under conversations directory exporting function accepting four arguments - controller instance, bot instance, array for help texts, conversation specific config.
+We suggest that you create new conversations by creating new module and adding it to configuration file. You can create module under conversations directory exporting function accepting four arguments - controller instance, bot instance, array for help texts, conversation specific config.
 
 For more information about controller and bot instances, see [this documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#matching-patterns-and-keywords-with-hears).
 
 Helps is array to push all possible commands to which will be outputed by main file if asked for help.
+
 Conversation specific configuration, can be provided in main config file, when enabling specific conversation. If you develop conversation, which might require some configuration or, for example, API key, it should go into main config.js config.conversations.convetsation_name.yourconfig 
 
