@@ -1,7 +1,7 @@
 var utils = require("../common/utils");
 module.exports = function(controller, bot, helps){
     helps.push("show errors");
-    controller.hears(['show(.*)errors'], ['ambient','direct_message'], function(bot, message) {
+    controller.hears(['show(.*)errors'], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
         utils.makeRequest("/o/errorlogs", {lines:100}, function(err, data){
             if(err)
                 bot.reply(message, 'Could not provide error data: '+err);

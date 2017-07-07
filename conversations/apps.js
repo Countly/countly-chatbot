@@ -9,7 +9,7 @@ module.exports = function(controller, bot, helps){
         }
     });
     helps.push("show apps");
-    controller.hears(['list(.*)apps', 'show(.*)apps', 'my apps'], ['ambient','direct_message'], function(bot, message) {
+    controller.hears(['list(.*)apps', 'show(.*)apps', 'my apps'], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
         utils.makeRequest("/o/apps/all", {}, function(err, apps){
             if(err)
                 bot.reply(message, 'Could not provide apps: '+err);
@@ -25,7 +25,7 @@ module.exports = function(controller, bot, helps){
     });
     
     helps.push("show stats for {APP_NAME}");
-    controller.hears(['show (?:me\s)?(?:some\s)?(.*) (?:data|stats)', 'show (?:me\s)?(?:some\s)?(?:data|stats) for (.*)' ], ['ambient','direct_message'], function(bot, message) {
+    controller.hears(['show (?:me\s)?(?:some\s)?(.*) (?:data|stats)', 'show (?:me\s)?(?:some\s)?(?:data|stats) for (.*)' ], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
         var appName = message.match[1].trim();
         if(utils.cur_apps[appName]){
             utils.makeRequest("/o/analytics/dashboard", {app_id:utils.cur_apps[appName]}, function(err, data){
