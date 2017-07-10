@@ -21,10 +21,21 @@ bash bin/install.sh
 Here are currently implemented commands for Countly Chatbot: 
 
 ```
-hello
-show apps
-show stats for {APP_NAME}
-show errors
+show apps //show all apps defined on the Countly instance
+show stats for {APP_NAME} // show latest usage stats for APP_NAME
+show errors // show latest api and dashboard errors
+hello //  pings bot
+call me {name} // defines your name
+what is my name // acknowledges your name
+uptime // for how long the bot is running
+what is {term} // dictionary
+translate "{term}" from {ln} to {ln} // translation service 
+weather {city} // outputs city weather
+wiki {term} // queries Wikipedia for term
+show me {term} // shows an image defining term
+ask yes or no question // Ask a simple question so bot can answer (fun)
+shut up // deactives (silences) bot 
+speak up // activates bot
 ```
 Example: 
 
