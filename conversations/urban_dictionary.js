@@ -3,9 +3,9 @@ var request = require("request");
 module.exports = function(controller, bot, helps){
 
     //urban
-    helps.push("what is {term}");
-    controller.hears(["(who|what) is ([^!.?,]*)", "(who|what)\'s ([^!.?,]*)"], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
-        request({uri:"http://api.urbandictionary.com/v0/define", qs:{term:message.match[2].trim()}}, function (error, response, body) {
+    helps.push("wat is dis {term}");
+    controller.hears(["wat is dis ([^!.?,]*)"], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
+        request({uri:"http://api.urbandictionary.com/v0/define", qs:{term:message.match[1].trim()}}, function (error, response, body) {
             try{
                 body = JSON.parse(body);
             }

@@ -6,6 +6,8 @@ var config = {
         apps:{},
         management:{},
         /*talk:{},
+        oxford:{"app_id": "", "app_key": ""},
+        npm:{},
         urban_dictionary:{},
         translate:{},
         weather:{appid:""},
