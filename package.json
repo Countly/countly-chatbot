@@ -5,6 +5,7 @@
   "main": "bot.js",
   "dependencies": {
     "botkit": "^0.5.5",
+    "cheerio": "^1.0.0-rc.2",
     "request": "^2.81.0",
     "wtf_wikipedia": "^1.0.0"
   },

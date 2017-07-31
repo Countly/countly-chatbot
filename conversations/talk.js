@@ -13,6 +13,10 @@ module.exports = function(controller, bot, helps){
         });
     });
     
+    controller.hears(['you([^!.?,]*)(will|be|get)([^!.?,]*)fine'], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
+        bot.reply(message, 'You spelled "fired" wrong');
+    });
+    
     helps.push("call me {name}");
     controller.hears(['call me (.*)', 'my name is (.*)', 'I am (.*)'], ['ambient','direct_message','direct_mention', 'mention'], function(bot, message) {
         var name = message.match[1];

@@ -6,12 +6,14 @@ var config = {
         apps:{},
         management:{},
         /*talk:{},
+        vacation:{usernames:[]},
         oxford:{"app_id": "", "app_key": ""},
         npm:{},
         urban_dictionary:{},
         translate:{},
         weather:{appid:""},
         wiki:{},
+        images:{} //google
         wiki_pics:{},
         yes_no:{}*/
     }
