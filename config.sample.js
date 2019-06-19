@@ -5,7 +5,9 @@ var config = {
     conversations:{
         apps:{},
         management:{},
-        /*talk:{},
+        /*advice:{},
+        bot4that:{},
+        talk:{},
         vacation:{usernames:[]},
         oxford:{"app_id": "", "app_key": ""},
         npm:{},
@@ -15,6 +17,7 @@ var config = {
         wiki:{},
         images:{} //google
         wiki_pics:{},
+        random_idea:{},
         yes_no:{}*/
     }
 };
