@@ -5,20 +5,7 @@ var config = {
     conversations:{
         apps:{},
         management:{},
-        /*advice:{},
-        bot4that:{},
-        talk:{},
-        vacation:{usernames:[]},
-        oxford:{"app_id": "", "app_key": ""},
-        npm:{},
-        urban_dictionary:{},
-        translate:{},
-        weather:{appid:""},
-        wiki:{},
-        images:{} //google
-        wiki_pics:{},
-        random_idea:{},
-        yes_no:{}*/
+        zendesk:{}
     }
 };
 
