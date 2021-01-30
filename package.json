@@ -4,14 +4,17 @@
   "description": "Countly Slack Bot",
   "main": "bot.js",
   "dependencies": {
-    "botkit": "^0.5.5",
+    "botkit": "^0.6.8",
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.81.0",
-    "wtf_wikipedia": "^1.0.0"
+    "wtf_wikipedia": "^1.0.0",
+    "snyk": "^1.69.7"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "countly",
@@ -19,5 +22,6 @@
     "bot"
   ],
   "author": "Countly",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
