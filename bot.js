@@ -2,22 +2,22 @@ var Botkit = require('botkit');
 var config = require("./config.js");
 var utils = require("./common/utils.js");
 
-var controller = Botkit.slackbot({
-    debug: true,
-});
-
-var bot;
+var bot, controller;
 function start_rtm (){
+    controller = Botkit.slackbot({
+        debug: true,
+    });
     bot = controller.spawn({
         token: config.slack_token
     }).startRTM();
 }
 
+start_rtm();
+
 controller.on('rtm_close', function(bot, err) {
+    bot.destroy();
     start_rtm();
 });
-
-start_rtm();
 
 bot.api.users.setPresence({presence:"auto"},function(err,response) {});
 
